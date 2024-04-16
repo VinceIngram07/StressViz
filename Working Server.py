@@ -17,9 +17,9 @@ if __name__ == "__main__":
     # dispatcher.map("/EmotiBit/0/PPG:RED", print_handler)
     # dispatcher.map("/EmotiBit/0/PPG:IR", print_handler)
     # dispatcher.map("/EmotiBit/0/PPG:GRN", print_handler)
-    # dispatcher.map("/EmotiBit/0/HR", print_handler)
+    dispatcher.map("/EmotiBit/0/HR", print_handler)
     dispatcher.map("/EmotiBit/0/EDA", print_handler)
-    # dispatcher.map("/EmotiBit/0/SCR:AMP", print_handler)
+    dispatcher.map("/EmotiBit/0/TEMP", print_handler)
     # dispatcher.map("/EmotiBit/0/SCR:RIS", print_handler)
     # dispatcher.map("/EmotiBit/0/SCR:FREQ", print_handler)
     # Add mappings for other data types as needed

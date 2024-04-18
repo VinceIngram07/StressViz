@@ -42,7 +42,7 @@ model = Sequential([
 ])
 
 # Compile the model
-optimizer = Adam(learning_rate=0.001)  # Adjust learning rate if needed
+optimizer = Adam(learning_rate=0.001)
 model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 # Early stopping

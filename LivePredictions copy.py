@@ -1,9 +1,9 @@
 import argparse
-import csv
 import numpy as np
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
 import tensorflow as tf
+import socketio
 
 # Load the trained model
 model = tf.keras.models.load_model('stress_prediction_model_multiclass.h5')
@@ -13,22 +13,23 @@ eda_data = None
 hr_data = None
 temp_data = None
 
+
+sio = socketio.Server()
+app = socketio.WSGIApp(sio)
+
+labels = ['medium', 'low', 'high']
+
 def preprocess_data(eda, hr, temp):
-    # Preprocess the data if needed
-    # Here, we are just scaling the data
-    eda_scaled = eda / 100.0  # Example scaling
-    hr_scaled = hr / 100.0  # Example scaling
-    temp_scaled = temp / 100.0  # Example scaling
+    eda_scaled = eda / 100.0
+    hr_scaled = hr / 100.0
+    temp_scaled = temp / 100.0
     return [eda_scaled, hr_scaled, temp_scaled]
 
 def predict_stress_level(data):
     # Convert the list to numpy array
     data_array = np.array([data])
-    print ('Test')
-    print (data_array)
     prediction = model.predict(data_array)
     return prediction
-
 def osc_handler(address, *args):
     global eda_data, hr_data, temp_data
 
@@ -46,6 +47,9 @@ def osc_handler(address, *args):
     if eda_data is not None and hr_data is not None and temp_data is not None:
         preprocessed_data = preprocess_data(eda_data, hr_data, temp_data)
         prediction = predict_stress_level(preprocessed_data)
+        max_index = prediction[0].argmax()
+        max_label = labels[max_index]
+        sio.emit('stress_level', max_label)
         print("Predicted stress level:", prediction)
 
 if __name__ == "__main__":

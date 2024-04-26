@@ -6,7 +6,7 @@ import tensorflow as tf
 import socketio
 
 # Load the trained model
-model = tf.keras.models.load_model('stress_prediction_model_multiclass.h5')
+model = tf.keras.models.load_model('stressLSTM.h5')
 
 # Initialize variables to store received data
 eda_data = None
@@ -29,28 +29,30 @@ def predict_stress_level(data):
     # Convert the list to numpy array
     data_array = np.array([data])
     prediction = model.predict(data_array)
-    return prediction
+    max_index = prediction[0].argmax()
+    max_label = labels[max_index]
+    max_probability = prediction[0][max_index]
+    return max_label, max_probability * 100  # return label and probability in percentage
+
 def osc_handler(address, *args):
     global eda_data, hr_data, temp_data
 
-    print(f"Received data from {address}: {args}")
+    # print(f"Received data from {address}: {args}")
     
     # Check the address and update corresponding data
     if address == "/EmotiBit/0/EDA":
         eda_data = args[0] if len(args) > 0 else None
-    elif address == "/EmotiBit/0/HR":
-        hr_data = args[0] if len(args) > 0 else None
     elif address == "/EmotiBit/0/TEMP":
         temp_data = args[0] if len(args) > 0 else None
+    elif address == "/EmotiBit/0/HR":
+        hr_data = args[0] if len(args) > 0 else None
 
-    # If all data is available, preprocess and predict
-    if eda_data is not None and hr_data is not None and temp_data is not None:
-        preprocessed_data = preprocess_data(eda_data, hr_data, temp_data)
-        prediction = predict_stress_level(preprocessed_data)
-        max_index = prediction[0].argmax()
-        max_label = labels[max_index]
-        sio.emit('stress_level', max_label)
-        print("Predicted stress level:", prediction)
+        # If all data is available, preprocess and predict
+        if eda_data is not None and temp_data is not None:
+                preprocessed_data = preprocess_data(eda_data, hr_data, temp_data)
+                label, probability = predict_stress_level(preprocessed_data)
+                sio.emit('stress_level', label)
+                print(f"Predicted stress level: {label} with probability: {probability:.2f}%")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

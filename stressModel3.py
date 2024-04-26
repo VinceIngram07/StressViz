@@ -8,17 +8,25 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping
 
 # Load the dataset
-# data = pd.read_csv("merged_data.csv")
-data = pd.read_csv("Test1_data.csv")
+data = pd.read_csv("Test4_data.csv")
 
 # Data preprocessing
 # Drop rows with missing values
 data.dropna(inplace=True)
 data.drop_duplicates(inplace=True)
 
-# Convert mixed type column to numeric
-# data['id'] = pd.to_numeric(data['id'], errors='coerce')
-# data.dropna(inplace=True)
+# Round the 'EDA' and 'TEMP' columns to the desired number of decimal places
+data['EDA'] = data['EDA'].round(7)
+data['TEMP'] = data['TEMP'].round(2)
+
+# Find the minimum number of rows among the labels
+min_rows = data['Label'].value_counts().min()
+
+# Sample the same number of rows from each label
+data = data.groupby('Label').apply(lambda x: x.sample(min_rows)).reset_index(drop=True)
+
+# Save the preprocessed data to a new CSV file
+data.to_csv("preprocessed_data2.csv", index=False)
 
 # Shuffle the dataset
 data_shuffled = data.sample(frac=1, random_state=42)  # Shuffle with a fixed random state for reproducibility
@@ -58,7 +66,7 @@ loss, accuracy = model.evaluate(X_test, y_test)
 print(f"Test Accuracy: {accuracy}")
 
 # Save the trained model
-# model.save("stress_prediction_model_multiclass.h5")
+model.save("Try_Me_Del_Me.h5")
 # THe ONE
 
 import matplotlib.pyplot as plt

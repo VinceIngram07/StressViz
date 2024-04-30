@@ -69,7 +69,7 @@ print("Precision:", precision)
 print("Recall:", recall)
 print("F1 Score:", f1)
 
-model.save("CheggModel.h5")
+model.save("BestModel.h5")
 # Step 6: Real-Time Prediction Script
 # Implement the script to capture live physiological data streams, preprocess the data,
 # and feed it into the trained LSTM model for prediction. This would involve setting up

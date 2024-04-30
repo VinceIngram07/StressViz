@@ -26,7 +26,7 @@ latest_eda = None
 latest_temp = None
 
 # Load the trained model
-model = tf.keras.models.load_model('CheggModel.h5')
+model = tf.keras.models.load_model('BestModel.h5')
 
 hr = None
 eda = None

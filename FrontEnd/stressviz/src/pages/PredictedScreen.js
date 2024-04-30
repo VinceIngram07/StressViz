@@ -129,14 +129,11 @@ const PredictScreen = () => {
             <p>Latest EDA: {prediction.eda}</p>
             <p>Latest TEMP: {prediction.temp}</p>
             <p>Stress Level: {prediction.stress_level}</p>
+            <p>Probability: {prediction.probability}%</p> {/* Add this line */}
             <Line data={data} />
-            <button onClick={() => setShowVideos(!showVideos)}> {/* Add this button */}
-              {showVideos ? 'Hide Videos' : 'Show Videos'}
-            </button>
-            {showVideos && <BreathingExercises />} {/* Add this line */}
           </div>
         )}
-      </div> {/* End of added div */}
+      </div>
     </div>
   );
 };

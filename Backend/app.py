@@ -26,7 +26,7 @@ latest_eda = None
 latest_temp = None
 
 # Load the trained model
-model = tf.keras.models.load_model('BestModel.h5')
+model = tf.keras.models.load_model('TheBestModel.h5')
 
 hr = None
 eda = None
@@ -131,16 +131,72 @@ def predict():
     # Preprocess the latest data
     preprocessed_data = preprocess_data(latest_eda, latest_hr, latest_temp)
     # Predict the stress level
-    stress_level = predict_stress_level(preprocessed_data)
+    stress_level, probability = predict_stress_level(preprocessed_data)
     
     # Create response containing latest data and prediction
     prediction = {
         'hr': latest_hr,
         'eda': latest_eda,
         'temp': latest_temp,
-        'stress_level': stress_level
+        'stress_level': stress_level,
+        'probability': probability  # Add this line
     }
     return jsonify(prediction)
+
+@app.route('/train', methods=['POST'])
+def train():
+    # global User
+    # User = request.json.get('username', 'User1')  # Get the username from the request data
+
+    # Load the dataset
+    data = pd.read_csv(f"{User}_data.csv")
+
+    # Data preprocessing
+    # Drop rows with missing values
+    data.dropna(inplace=True)
+    data.drop_duplicates(inplace=True)
+
+    # Shuffle the dataset
+    data_shuffled = data.sample(frac=1, random_state=42)  # Shuffle with a fixed random state for reproducibility
+
+    # Separate features (X) and target variable (label)
+    X = data_shuffled[['EDA', 'HR', 'TEMP']]
+    y = data_shuffled['Label']
+
+    # Standardize the features
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    # Split the dataset into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+    # Define the neural network model
+    model = Sequential([
+        Dense(32, activation='relu', input_shape=(X_train.shape[1],)),
+        Dropout(0.5),
+        Dense(16, activation='relu'),
+        Dropout(0.5),
+        Dense(3, activation='softmax')  # 3 neurons for 3 classes, softmax activation for multi-class classification
+    ])
+
+    # Compile the model
+    optimizer = Adam(learning_rate=0.001)
+    model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+    # Early stopping
+    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+
+    # Train the model
+    history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1, callbacks=[early_stopping], verbose=1)
+
+    # Evaluate the model
+    loss, accuracy = model.evaluate(X_test, y_test)
+    print(f"Test Accuracy: {accuracy}")
+
+    # Save the trained model
+    model.save(f"stress_prediction_model_{User}.h5")
+
+    return 'Model trained and saved'
 
 def preprocess_data(eda, hr, temp):
     # Preprocess the data if needed
@@ -155,7 +211,8 @@ def predict_stress_level(data):
     data_array = np.array([data])
     prediction = model.predict(data_array)
     stress_level = 'High' if prediction[0][0] > 0.5 else 'Low'
-    return stress_level
+    probability = prediction[0][0] * 100  # Convert to percentage
+    return stress_level, probability
 
 if __name__ == "__main__":
     socketio.run(app, port=8080)

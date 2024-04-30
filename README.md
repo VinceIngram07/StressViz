@@ -1,9 +1,20 @@
 # StressViz
-The goal of this project is to develop an integrated system that combines Emotibit EDA data and neural networks (NNs). The system will detect stress levels based on electrodermal activity (EDA) measurements and provide real-time feedback through a user-friendly application. This project aims to enhance well-being and promote stress management.
 
-## Description
 
-A brief description of your project. What does it do? Who is it for? Why did you make it?
+## Abstract
+
+"StressViz is a comprehensive system designed to detect and visualize stress levels in real-time using Emotibit EDA data and neural networks. The system leverages physiological measurements and machine learning techniques to provide insightful feedback through an easy-to-use application. The goal of StressViz is to promote effective stress management and enhance overall well-being. The application is built with a React frontend and a Flask backend, and it integrates with the EmotiBit device for real-time data collection. This project, developed as a senior project at Morgan State University, aims to contribute to the field of mental health by providing a tool that helps individuals understand and manage their stress levels more effectively."
+
+## Credits
+
+StressViz was developed as a senior project at Morgan State University by the following team members:
+
+Vincent Ingram
+Emmanuel Olaleye
+Marcus Cusaac
+Savannah Sales
+Tyrese Knight
+
 
 ## Table of Contents
 
@@ -58,6 +69,14 @@ Once both applications are running, you can use the application by opening a web
 
 The application allows users to monitor their stress levels in real-time. Users can perform various tasks and see how these tasks affect their stress levels, helping them understand and manage their stress more effectively.
 
+## Setup
+
+1. **EmotiBit Setup**: Follow the [EmotiBit Documentation](https://github.com/EmotiBit/EmotiBit_Docs) to set up your EmotiBit device.
+
+2. **File Replacement**: After setting up your EmotiBit, navigate to the `EmotiBit Oscilloscope` data directory, typically located at `C:\Program Files\EmotiBit\EmotiBit Oscilloscope\data`. Replace the existing files in this directory with the files from the `emotibit` directory in this repository. You can find the `emotibit` directory [here](link-to-emotibit-directory-in-your-repo).
+
+
+
 ## Project Structure
 
 An overview of the files and directories in your project. For each file or directory, provide a brief description of what it does.
@@ -80,7 +99,7 @@ This project was developed as a senior project for Morgan State University. It r
 
 ## License
 
-Information about the license your project uses. If your project is open source, you might want to include a copy of the license in your repository.
+This project is licensed under the terms of the MIT License. See the [LICENSE](LICENSE) file for details.
 
 # Why Use Our Product
 
@@ -97,3 +116,5 @@ Our application is designed to provide real-time insights into your stress level
 5. **Easy to Use**: Our application is user-friendly and easy to use. You can start monitoring your stress levels with just a few clicks.
 
 In today's fast-paced world, stress management is more important than ever. Our application provides a simple and effective way to monitor and manage your stress levels, helping you lead a healthier and happier life.
+
+## References

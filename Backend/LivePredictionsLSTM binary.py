@@ -6,7 +6,7 @@ import tensorflow as tf
 import socketio
 
 # Load the trained model
-model = tf.keras.models.load_model('CheggModel.h5')
+model = tf.keras.models.load_model('BestModel.h5')
 
 # Initialize variables to store received data
 eda_data = None
@@ -27,6 +27,7 @@ def predict_stress_level(data):
     data_array = np.array([data]).reshape((1, len(data), 1))
     prediction = model.predict(data_array)
     stress_level = 'high' if prediction[0][0] > 0.5 else 'low'  # binary prediction
+    print(prediction[0][0])
     return stress_level, prediction[0][0] * 100  # return label and probability in percentage
 
 def osc_handler(address, *args):

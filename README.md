@@ -158,5 +158,6 @@ Our application is designed to provide real-time insights into your stress level
 In today's fast-paced world, stress management is more important than ever. Our application provides a simple and effective way to monitor and manage your stress levels, helping you lead a healthier and happier life.
 
 ## Demonstation Videos
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)]([https://raw.githubusercontent.com/username/repo/blob/branch/folder/video.mp4](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4))
 
 ## References

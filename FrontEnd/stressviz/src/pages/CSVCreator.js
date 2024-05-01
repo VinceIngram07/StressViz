@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import BreathingExercises from './TestAPI'; // Import the BreathingExercises component
+import BreathingExercises from './TestAPI';
 
 function StartStop() {
   const [status, setStatus] = useState('');
@@ -35,7 +35,7 @@ function StartStop() {
 
   const appStyle = {
     display: 'flex',
-    flexDirection: 'row', // Change this from 'column' to 'row'
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
@@ -69,8 +69,8 @@ function StartStop() {
 
   return (
     <div className="App" style={appStyle}>
-      <BreathingExercises /> {/* Move this to the top */}
-      <div style={{ marginLeft: '20px' }}> {/* Add this div */}
+      <BreathingExercises />
+      <div style={{ marginLeft: '20px' }}>
         <label style={inputStyle}>
           Label:
           <input type="number" value={label} onChange={handleLabelChange} style={inputStyle} />
@@ -85,7 +85,7 @@ function StartStop() {
           <button style={buttonStyle} onClick={train}>Train</button>
         </div>
         <p style={statusStyle}>Status: {status}</p>
-      </div> {/* End of added div */}
+      </div>
     </div>
   );
 }

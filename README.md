@@ -177,3 +177,9 @@ In today's fast-paced world, stress management is more important than ever. Our 
 [Link to the Updated Build & Train video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Updated%20Build_%20Train%20-%20Made%20with%20Clipchamp.mp4)
 
 ## References
+1. EmotiBit. “EmotiBit Documentation.” GitHub, EmotiBit/EmotiBit_Docs.
+2. Umematsu, Terumi, et al. “Improving Students’ Daily Life Stress Forecasting Using LSTM Neural Networks.” Massachusetts Institute of Technology, Media Lab, 75 Amherst Street, Cambridge, MA, USA, 02139
+3. Matton, Katie, et al. "Contrastive Learning of Electrodermal Activity Representations for Stress Detection." Proceedings of Machine Learning Research, vol. LEAVE UNSET, no. 1-17, 2023, Conference on Health, Inference, and Learning (CHIL) 2023
+4. Schmidt, Philip, et al. “WESAD (Wearable Stress and Affect Detection) Dataset.” Proceedings of the 2018 ACM International Joint Conference and 2018 International Symposium on Pervasive and Ubiquitous Computing and Wearable Computers (UbiComp '18), 748–753. DOI: 10.1145/3267305.3267623
+5. Hochreiter, Sepp, and Jürgen Schmidhuber. “Long Short-Term Memory.” Neural Computation, vol. 9, no. 8, 1997, pp. 1735–1780. DOI: 10.1162/neco.1997.9.8.1735
+6. Raval, Priyank. “Nurse Stress Prediction Wearable Sensors.” Kaggle, 2021. Nurse Stress Prediction Wearable Sensors on Kaggle.

@@ -8,17 +8,17 @@
 
 ## About This Project
 
-This project was developed as a senior project for Morgan State University. It represents the culmination of years of study and was designed to provide real-world experience in developing and managing a full-stack application. The goal of the project was to create a system that could help people understand and manage their stress levels more effectively, contributing to overall well-being and mental health.
+This project represents the culmination of years of study and real-world experience in developing and managing a full-stack application. Developed as a senior project for Morgan State University, StressViz aims to help people understand and manage their stress levels more effectively, thereby contributing to overall well-being and mental health.
 
 ## Credits
 
 StressViz was developed as a senior project at Morgan State University by the following team members:
 
-Vincent Ingram,
-Emmanuel Olaleye,
-Marcus Cusaac,
-Savannah Sales,
-Tyrese Knight,
+- Vincent Ingram
+- Emmanuel Olaleye
+- Marcus Cusaac
+- Savannah Sales
+- Tyrese Knight
 
 
 ## Table of Contents
@@ -155,26 +155,24 @@ The model's performance is evaluated using several metrics:
 
 This project is licensed under the terms of the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Why Use Our Product
+## Why Use Our Product
 
-Our application is designed to provide real-time insights into your stress levels, helping you understand how different tasks and activities impact your mental well-being. Here are a few reasons why you should consider using our application:
+- **Real-Time Stress Monitoring**: Our application provides real-time insights into your stress levels, helping you understand how different tasks and activities impact your mental well-being. [Learn more](#abstract)
 
-1. **Real-Time Stress Monitoring**: Our application uses physiological data to predict stress levels in real-time. This allows you to see how your stress levels fluctuate throughout the day and during different activities.
+- **Personalized Insights**: By monitoring your stress levels over time, our application can provide personalized insights into what tasks or activities cause you the most stress, helping you identify potential stressors in your life. [Explore more](#about-this-project)
 
-2. **Personalized Insights**: By monitoring your stress levels over time, our application can provide personalized insights into what tasks or activities cause you the most stress. This can help you identify potential stressors in your life.
+- **Informed Decision Making**: With a better understanding of what causes your stress, you can make more informed decisions about how to manage your time and activities. [Find out more](#abstract)
 
-3. **Informed Decision Making**: With a better understanding of what causes your stress, you can make more informed decisions about how to manage your time and activities. For example, you might decide to take more breaks during stressful tasks, or to schedule relaxing activities after them.
+- **Improved Well-Being**: By helping you manage your stress more effectively, our application can contribute to improved mental well-being. Lower stress levels can lead to better sleep, improved focus, and a more positive outlook. [Learn how](#abstract)
 
-4. **Improved Well-Being**: By helping you manage your stress more effectively, our application can contribute to improved mental well-being. Lower stress levels can lead to better sleep, improved focus, and a more positive outlook.
-
-5. **Easy to Use**: Our application is user-friendly and easy to use. You can start monitoring your stress levels with just a few clicks.
+- **Easy to Use**: Our application is user-friendly and easy to use, allowing you to start monitoring your stress levels with just a few clicks. [Get started](#usage)
 
 In today's fast-paced world, stress management is more important than ever. Our application provides a simple and effective way to monitor and manage your stress levels, helping you lead a healthier and happier life.
 
 ## Demonstration Videos
-[Link to the Low Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4)
-[Link to the High Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/High%20Stress%20-%20Made%20with%20Clipchamp%20(1).mp4)
-[Link to the Updated Build & Train video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Updated%20Build_%20Train%20-%20Made%20with%20Clipchamp.mp4)
+- [Link to the Low Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4) - Video demonstration showing low stress levels.
+- [Link to the High Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/High%20Stress%20-%20Made%20with%20Clipchamp%20(1).mp4) - Video demonstration showing high stress levels.
+- [Link to the Updated Build & Train video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Updated%20Build_%20Train%20-%20Made%20with%20Clipchamp.mp4) - Video demonstrating updates in the build and train process.
 
 ## References
 1. EmotiBit. “EmotiBit Documentation.” GitHub, EmotiBit/EmotiBit_Docs.

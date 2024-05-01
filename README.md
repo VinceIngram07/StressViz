@@ -1,5 +1,5 @@
 # StressViz
-
+![StressViz Image](https://github.com/VinceIngram07/StressViz/blob/main/Videos/StressViz.png)
 
 ## Abstract
 
@@ -67,6 +67,7 @@ You might need to use `python3` and `pip3` instead of `python` and `pip`, depend
 ## Setup
 
 1. **EmotiBit Setup**: Follow the [EmotiBit Documentation](https://github.com/EmotiBit/EmotiBit_Docs) to set up your EmotiBit device. When setup use the Emotibit Oscilloscope application to send the Emotibit data Via OSC.
+![Oscilloscope Image](https://github.com/VinceIngram07/StressViz/blob/main/Videos/osc.png)
 
 2. **File Replacement**: After setting up your EmotiBit, navigate to the `EmotiBit Oscilloscope` data directory, typically located at `C:\Program Files\EmotiBit\EmotiBit Oscilloscope\data`. Replace the existing files in this directory with the files from the `emotibit` directory in this repository. You can find the `emotibit` directory [here](https://github.com/VinceIngram07/StressViz/tree/main/Emotibit).
 
@@ -81,7 +82,7 @@ This application consists of a frontend developed with React and a backend devel
     ```
     This will start the React application, which by default runs on `http://localhost:3000`.
 
-2. **Backend**: In a new terminal window, navigate to the `datasetmaker` directory and start the Flask application:
+2. **Backend**: In a new terminal window, navigate to the `dataset maker` directory and start the Flask application:
     ```bash
     cd Backend
     python app.py
@@ -90,22 +91,23 @@ This application consists of a frontend developed with React and a backend devel
 
 Once both applications are running, you can use the application by opening a web browser and navigating to `http://localhost:3000`.
 
-The application allows users to monitor their stress levels in real-time. Users can perform various tasks and see how these tasks affect their stress levels, helping them understand and manage their stress more effectively.
+The application allows users to monitor their stress levels in real time. Users can perform various tasks and see how these tasks affect their stress levels, helping them understand and manage their stress more effectively.
 
 Now on `http://localhost:3000` there will be 5 tabs on the top the 2 main features are:
 
-1. **Build/ Train**: In this window you can create your own dataset! We recemend starting with putting a diffrent label with a diffrent video that you can open and expand on the left to get your stress levels to diffrent states. You can also set a username to set your dataset and model names to diffrent people.
-![alt text](image.png)
+1. **Build/ Train**: In this window, you can create your dataset! We recommend starting with putting a different label with a different video that you can open and expand on the left to get your stress levels to different states. You can also set a username to set your dataset and model names to different people.
+![Image](https://github.com/VinceIngram07/StressViz/blob/main/Videos/image.png)
 
-2. **Prediction**: In this window you can see the model predicting in real time! Durring this process the Videos on the left are still avalible if you want to test if your model worked by putting you in the same stress state.
+3. **Prediction**: In this window, you can see the model predicting in real time! During this process, the Videos on the left are still available if you want to test if your model worked by putting you in the same stress state.
+![Screenshot Image](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Screenshot%202024-04-30%20230536.png)
 
 ## Project Structure
 
-1. Backend: This is where all the Flask and server endpoints are delt with and where the magic happens. There are many servers but the app.py is the most sophisticated.
+1. Backend: This is where all the Flask and server endpoints are dealt with and where the magic happens. There are many servers but the app.py is the most sophisticated.
 
 2. Frontend: Using react we display the data being sent from the backend.
 
-3. Model Iterations: Diffrent versions of the models we used for testing and figuring out what the best way to predict stress.
+3. Model Iterations: Different versions of the models we used for testing and figuring out the best way to predict stress.
 
 4. Videos: Content for the Readme file.
 
@@ -129,7 +131,7 @@ The neural network model used in this project is implemented using the Keras API
 
 The model consists of an LSTM layer followed by a Dropout layer and a Dense layer:
 
-- The LSTM layer has 50 units. LSTM layers maintain information in 'cell state' over time, which helps them learn from the temporal aspects of the data.
+- The LSTM layer has 50 units. LSTM layers maintain information in a 'cell state' over time, which helps them learn from the temporal aspects of the data.
 - The Dropout layer randomly sets a fraction (0.2 in this case) of the input units to 0 at each update during training, which helps prevent overfitting.
 - The Dense layer is the output layer of the network. It has 1 unit with a linear activation function, which is suitable for our regression problem.
 
@@ -169,7 +171,7 @@ Our application is designed to provide real-time insights into your stress level
 
 In today's fast-paced world, stress management is more important than ever. Our application provides a simple and effective way to monitor and manage your stress levels, helping you lead a healthier and happier life.
 
-## Demonstation Videos
+## Demonstration Videos
 [Link to the Low Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4)
 [Link to the High Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/High%20Stress%20-%20Made%20with%20Clipchamp%20(1).mp4)
 [Link to the Updated Build & Train video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Updated%20Build_%20Train%20-%20Made%20with%20Clipchamp.mp4)

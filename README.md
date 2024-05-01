@@ -23,11 +23,23 @@ Tyrese Knight,
 
 ## Table of Contents
 
+- [Abstract](#abstract)
+- [About This Project](#about-this-project)
+- [Credits](#credits)
+- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
+- [Setup](#setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
+- [Neural Network Model](#neural-network-model)
+  - [Model Architecture](#model-architecture)
+  - [Model Training](#model-training)
+  - [Model Evaluation](#model-evaluation)
 - [License](#license)
+- [Why Use Our Product](#why-use-our-product)
+- [Demonstration Videos](#demonstration-videos)
+- [References](#references)
 
 ## Installation
 
@@ -158,6 +170,8 @@ Our application is designed to provide real-time insights into your stress level
 In today's fast-paced world, stress management is more important than ever. Our application provides a simple and effective way to monitor and manage your stress levels, helping you lead a healthier and happier life.
 
 ## Demonstation Videos
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)]([https://raw.githubusercontent.com/username/repo/blob/branch/folder/video.mp4](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4))
+[Link to the Low Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Low%20Stress%20-%20Made%20with%20Clipchamp.mp4)
+[Link to the High Stress video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/High%20Stress%20-%20Made%20with%20Clipchamp%20(1).mp4)
+[Link to the Updated Build & Train video](https://github.com/VinceIngram07/StressViz/blob/main/Videos/Updated%20Build_%20Train%20-%20Made%20with%20Clipchamp.mp4)
 
 ## References
